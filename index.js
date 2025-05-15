@@ -14,7 +14,11 @@ const app = express();
 
 // ✅ Enable CORS (Allow frontend requests)
 //app.use(cors({ origin: 'http://localhost:3000' }));
-app.use(cors()); 
+app.use(cors({
+  origin: 'https://qr-order-orcin.vercel.app', // <-- your deployed frontend
+  credentials: true
+}));
+
 
 // Middleware
 app.use(express.json());
